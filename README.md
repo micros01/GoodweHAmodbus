@@ -1,7 +1,7 @@
 # GoodweHAmodbus
 Homeassistant modbus config for Goodwe ET 15
 
-The content in GoodweET15.yaml should be in the configuration.yaml file (remember to restart homeassistant after added)
+The content in GoodweET15.yaml should be in the configuration.yaml file (remember to change the IP and restart homeassistant after added)
 sensors.yaml contains a template for translating the status of the battery to a readable 
 
 Create helpers for calculating total effect and for each string
@@ -13,3 +13,6 @@ Create helpers for calculating total effect and for each string
 
 # Battery SOC %
 {{states('sensor.goodwe_battery_soc')|float*10}}
+
+# Energy Dashboard
+Add the sensor Goodwe Total Energy Produced to the "Solar Panels"
