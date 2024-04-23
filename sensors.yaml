@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    goodwe_status_text:
+      friendly_name: "Goodwe Battery Charge Mode"
+      value_template: >
+        {% set mapper = {
+          '0': 'No battery or battery disconnected',
+          '1': 'Battery in standby mode',
+          '2': 'Discharging',
+          '3': 'Charging'} %}
+        {% set state =  states.sensor.goodwe_battery_charge_mode.state %}
+        {{ mapper[state] if state in mapper else 'Unknown' }}
