@@ -20,7 +20,7 @@ modbus:
         slave: 247
         address: 37003
         scan_interval: 60
-        device_class: battery
+        device_class: temperature
         unit_of_measurement: °C
         scale: .1
         precision: 1
@@ -28,7 +28,7 @@ modbus:
         slave: 247
         address: 35183
         scan_interval: 5
-        device_class: battery
+        device_class: power
         unit_of_measurement: W
         scale: 1
         precision: 1
@@ -36,7 +36,7 @@ modbus:
         slave: 247
         address: 35180
         scan_interval: 5
-        device_class: battery
+        device_class: voltage
         unit_of_measurement: V
         scale: .1
         precision: 1
@@ -47,7 +47,6 @@ modbus:
         unique_id: 6dac43d6-daed-19ec-881f-f9b503e81a10
         device_class: battery
         unit_of_measurement: '%'
-        scale: .1
         precision: 1
 
       - name: Goodwe Current PV1 string
@@ -55,7 +54,7 @@ modbus:
         address: 35104
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a20
-        device_class: power
+        device_class: current
         unit_of_measurement: A
         scale: .1
         precision: 1
@@ -64,7 +63,7 @@ modbus:
         address: 35108
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a21
-        device_class: power
+        device_class: current
         unit_of_measurement: A
         scale: .1
         precision: 1
@@ -73,7 +72,7 @@ modbus:
         address: 35112
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a22
-        device_class: power
+        device_class: current
         unit_of_measurement: A
         scale: .1
         precision: 1
@@ -82,7 +81,7 @@ modbus:
         address: 35116
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a23
-        device_class: power
+        device_class: current
         unit_of_measurement: A
         scale: .1
         precision: 1
@@ -92,7 +91,7 @@ modbus:
         address: 35103
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a24
-        device_class: power
+        device_class: voltage
         unit_of_measurement: V
         scale: .1
         precision: 1
@@ -101,7 +100,7 @@ modbus:
         address: 35107
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a25
-        device_class: power
+        device_class: voltage
         unit_of_measurement: V
         scale: .1
         precision: 1
@@ -110,7 +109,7 @@ modbus:
         address: 35111
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a26
-        device_class: power
+        device_class: voltage
         unit_of_measurement: V
         scale: .1
         precision: 1
@@ -119,14 +118,13 @@ modbus:
         address: 35115
         scan_interval: 5
         unique_id: 6dac43d6-daed-49ec-881f-f9b503e81a27
-        device_class: power
+        device_class: voltage
         unit_of_measurement: V
         scale: .1
-        precision: 1
-       
+        precision: 1        
       - name: Goodwe Total Energy Produced
         slave: 247
-        address: 35192
+        address: 35301
         scan_interval: 30
         unique_id: 6dac13d6-daed-19ec-881f-f9b503e81a27
         device_class: energy
@@ -144,3 +142,10 @@ modbus:
         unit_of_measurement: kWh
         scale: .1
         precision: 1
+    switches:
+      - name: Goodwe Charge Battery switch
+        slave: 247
+        address: 47511
+        command_on: 11
+        command_off: 1
+        unique_id: 6dac13d6-daed-19ec-881f-f9b513a81a28
