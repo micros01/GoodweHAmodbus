@@ -16,4 +16,4 @@ sensors.yaml contains a template for translating the status of the battery to a 
 {{states('sensor.goodwe_battery_soc')|float*10}}
 
 ## Energy Dashboard
-Add the sensor Goodwe Total Energy Produced to the "Solar Panels"
+Add the sensor "Goodwe Energy Produced Today" to the "Solar Panels"
